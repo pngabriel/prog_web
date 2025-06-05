@@ -1,0 +1,286 @@
+/* Variáveis de cores e estilo */
+:root {
+    --primary-color: #4361ee;
+    --primary-hover: #3a56d4;
+    --secondary-color: #4cc9f0;
+    --background-color: #f8f9fa;
+    --text-color: #2b2d42;
+    --error-color: #ef476f;
+    --success-color: #06d6a0;
+    --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    --border-radius: 12px;
+  }
+  
+  /* Reset e estilos globais */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+    background: var(--background-color);
+    color: var(--text-color);
+  }
+  
+  /* Container principal */
+  .login_div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #f5f7fa 0%, #eef2f7 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Animação de fundo com formas */
+  .login_div::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(67, 97, 238, 0.05) 20%, transparent 70%);
+    animation: rotate 30s linear infinite;
+    z-index: 0;
+  }
+  
+  @keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  /* Logo */
+  .logo2 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.5px;
+    text-shadow: 0 2px 10px rgba(67, 97, 238, 0.15);
+    position: relative;
+    z-index: 2;
+  }
+  
+  .logo2::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: var(--secondary-color);
+    border-radius: 4px;
+  }
+  
+  /* Container do formulário */
+  .form {
+    background: white;
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    width: 100%;
+    max-width: 420px;
+    position: relative;
+    z-index: 2;
+    transition: var(--transition);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+  }
+  
+  .form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Grupos de entrada */
+  .inputGroup {
+    margin-bottom: 1.8rem;
+    position: relative;
+  }
+  
+  /* Estilo para labels */
+  .label {
+    font-weight: 500;
+    color: var(--text-color);
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+    display: block;
+    transition: var(--transition);
+  }
+  
+  /* Campos de input */
+  .input {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: var(--transition);
+    color: var(--text-color);
+    background-color: #f8f9fa;
+  }
+  
+  .input:focus {
+    border-color: var(--primary-color);
+    background-color: white;
+    box-shadow: 0 0 0 4px rgba(67, 97, 238, 0.1);
+  }
+  
+  /* Botão de login */
+  .button {
+    width: 100%;
+    padding: 0.9rem;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-top: 0.5rem;
+    box-shadow: 0 4px 12px rgba(67, 97, 238, 0.25);
+    letter-spacing: 0.5px;
+  }
+  
+  .button:hover {
+    background: linear-gradient(45deg, var(--primary-hover), var(--secondary-color));
+    transform: translateY(-2px);
+    box-shadow: 0 7px 15px rgba(67, 97, 238, 0.3);
+  }
+  
+  .button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 8px rgba(67, 97, 238, 0.3);
+  }
+  
+  /* Estilo de mensagem de erro */
+  .error_message {
+    color: var(--error-color);
+    font-size: 0.875rem;
+    margin: 0.8rem 0 1.2rem;
+    text-align: center;
+    background-color: rgba(239, 71, 111, 0.08);
+    padding: 0.6rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    border-left: 3px solid var(--error-color);
+  }
+  
+  /* Link para recuperação de senha */
+  .forgot_password {
+    display: block;
+    text-align: right;
+    font-size: 0.85rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    margin-top: 0.5rem;
+    margin-bottom: 1.2rem;
+    transition: var(--transition);
+  }
+  
+  .forgot_password:hover {
+    color: var(--primary-hover);
+    text-decoration: underline;
+  }
+  
+  /* Divisor para outras opções de login */
+  .divider {
+    display: flex;
+    align-items: center;
+    margin: 1.5rem 0;
+  }
+  
+  .divider::before,
+  .divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background-color: #e9ecef;
+  }
+  
+  .divider span {
+    padding: 0 1rem;
+    color: #adb5bd;
+    font-size: 0.85rem;
+  }
+  
+  /* Botões de login social */
+  .social_login {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  
+  .social_button {
+    flex: 1;
+    padding: 0.8rem;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    background-color: white;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .social_button:hover {
+    background-color: #f8f9fa;
+    border-color: #dee2e6;
+  }
+  
+  .social_button img {
+    width: 20px;
+    height: 20px;
+  }
+  
+  /* Link para registro */
+  .register_link {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: #6c757d;
+  }
+  
+  .register_link a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+  }
+  
+  .register_link a:hover {
+    color: var(--primary-hover);
+    text-decoration: underline;
+  }
+  
+  /* Animação para as mensagens de erro */
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+  }
+  
+  .error_message.shake {
+    animation: shake 0.6s ease-in-out;
+  }
+  
+  /* Responsividade */
+  @media (max-width: 480px) {
+    .form {
+      padding: 1.8rem;
+      max-width: 90%;
+    }
+    
+    .logo2 {
+      font-size: 2.2rem;
+    }
+  }

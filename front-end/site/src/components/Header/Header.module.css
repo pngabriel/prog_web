@@ -1,0 +1,216 @@
+/* Header.module.css */
+
+/* Header principal */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    background-color: rgba(255, 255, 255, 0.95);
+    transition: all 0.3s ease;
+    z-index: 100;
+}
+
+.headerScrolled {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+/* Container do logo */
+.logoContainer {
+    display: flex;
+    align-items: center;
+}
+
+/* Logo */
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #4CAF50;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Botão de menu para mobile */
+.mobileMenuButton {
+    margin-right: 12px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.mobileMenuButton:hover {
+    background-color: #3e8e41;
+}
+
+/* Itens de navegação */
+.navItems {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.navItem {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 1rem;
+    color: #333;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.navItem:hover {
+    color: #4CAF50;
+}
+
+.logoutLink {
+    margin-left: 1rem;
+    color: #e53935;
+}
+
+.logoutLink:hover {
+    color: #c62828;
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -280px; /* Começa escondido */
+    width: 280px;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    z-index: 200;
+}
+
+.sidebarOpen {
+    transform: translateX(280px); /* Move para a direita para mostrar */
+}
+
+.sidebarContent {
+    padding: 5rem 1.5rem 2rem;
+}
+
+.sidebarTitle {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #4CAF50;
+    margin-bottom: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.sidebarList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebarItem {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    font-size: 1.05rem;
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 0.25rem;
+    transition: all 0.2s ease;
+}
+
+.sidebarItem:hover {
+    background-color: #f0f9f0;
+    color: #4CAF50;
+}
+
+.sidebarLogout {
+    margin-top: 1.5rem;
+    color: #e53935;
+}
+
+.sidebarLogout:hover {
+    background-color: #ffebee;
+    color: #c62828;
+}
+
+/* Botão para fechar o sidebar em mobile */
+.closeSidebarButton {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.closeSidebarButton:hover {
+    background-color: #3e8e41;
+}
+
+/* Botão para abrir o sidebar em desktop */
+.toggleSidebarButton {
+    position: fixed;
+    top: 5rem;
+    left: 0;
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px;
+    border-top-right-radius: 0.375rem;
+    border-bottom-right-radius: 0.375rem;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 150;
+}
+
+.toggleSidebarButton:hover {
+    background-color: #3e8e41;
+}
+
+.toggleButtonOpen {
+    left: 280px;
+}
+
+/* Overlay para fechar o menu */
+.overlay {
+    position: fixed;
+    inset: 0; /* Top, right, bottom, left = 0 */
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 150;
+}
+
+/* Espaço para o conteúdo abaixo do header */
+.contentSpace {
+    padding-top: 4rem;
+}
+
+/* Responsividade */
+@media (min-width: 768px) {
+    .header {
+        padding: 1rem 4rem;
+    }
+}

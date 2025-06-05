@@ -1,0 +1,410 @@
+/* Produtos.module.css */
+
+.produtosContainer {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f9f9f9;
+}
+
+.mainContent {
+    padding: 20px 80px;
+    margin-top: 20px;
+}
+
+.pageHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.pageHeader h1 {
+    font-size: 1.8rem;
+    color: #333;
+    font-weight: 600;
+}
+
+.btnAdicionar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btnAdicionar:hover {
+    background-color: #388E3C;
+}
+
+/* Filtros */
+.filtrosContainer {
+    display: flex;
+    margin-bottom: 25px;
+    gap: 15px;
+}
+
+.buscaContainer {
+    position: relative;
+    flex-grow: 1;
+}
+
+.searchIcon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #757575;
+}
+
+.inputBusca {
+    width: 90%;
+    padding: 10px 15px 10px 35px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.selectContainer {
+    min-width: 180px;
+}
+
+.selectFiltro {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    background-color: white;
+}
+
+/* Grid de Produtos */
+.produtosGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.produtoCard {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.produtoCard:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.produtoInfo {
+    padding: 16px;
+}
+
+.produtoInfo h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.categoriaContainer {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+.categoriaTag {
+    background-color: #e1f5fe;
+    color: #0288d1;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.statusTag {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.Ativo {
+    background-color: #e8f5e9;
+    color: #388e3c;
+}
+
+.BaixoEstoque {
+    background-color: #fff8e1;
+    color: #ffa000;
+}
+
+.Esgotado {
+    background-color: #ffebee;
+    color: #d32f2f;
+}
+
+.Inativo {
+    background-color: #f5f5f5;
+    color: #757575;
+}
+
+.produtoDetalhes {
+    margin-top: 10px;
+}
+
+.preco {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #4CAF50;
+    margin-bottom: 5px;
+}
+
+.estoque {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.estoqueAlerta {
+    color: #f44336;
+    font-weight: 500;
+}
+
+.produtoAcoes {
+    display: flex;
+    background-color: #f5f5f5;
+    padding: 10px;
+    justify-content: space-between;
+}
+
+.btnAcao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: none;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 8px;
+    transition: background-color 0.2s;
+}
+
+.btnEditar {
+    color: #2196F3;
+}
+
+.btnEditar:hover {
+    background-color: #e3f2fd;
+}
+
+.btnRemover {
+    color: #F44336;
+}
+
+.btnRemover:hover {
+    background-color: #ffebee;
+}
+
+.btnVisualizar {
+    color: #4CAF50;
+}
+
+.btnVisualizar:hover {
+    background-color: #e8f5e9;
+}
+
+.semProdutos {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 60px 0;
+    color: #757575;
+    font-size: 1.1rem;
+}
+
+/* Modal */
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modalContainer {
+    background-color: white;
+    border-radius: 8px;
+    width: 95%;
+    max-width: 550px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.modalHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.modalHeader h2 {
+    font-size: 1.4rem;
+    color: #333;
+    margin: 0;
+}
+
+.btnFechar {
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #757575;
+}
+
+.modalContent {
+    padding: 20px;
+}
+
+.formGroup {
+    margin-bottom: 20px;
+}
+
+.formGroup label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.formGroup input, .formGroup select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.95rem;
+}
+
+.formRow {
+    display: flex;
+    gap: 15px;
+}
+
+.formRow .formGroup {
+    flex: 1;
+}
+
+.modalActions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btnCancelar {
+    padding: 10px 15px;
+    background-color: #f5f5f5;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    color: #333;
+}
+
+.btnSalvar {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.btnSalvar:hover {
+    background-color: #388E3C;
+}
+
+/* Notificação */
+.notificacao {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 15px 25px;
+    border-radius: 4px;
+    font-weight: 500;
+    color: white;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    animation: slideIn 0.3s ease-out forwards;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.success {
+    background-color: #4CAF50;
+}
+
+.error {
+    background-color: #F44336;
+}
+
+.warning {
+    background-color: #FF9800;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .mainContent {
+        padding: 20px 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .mainContent {
+        padding: 20px;
+    }
+    
+    .filtrosContainer {
+        flex-direction: column;
+    }
+    
+    .formRow {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .pageHeader {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .produtosGrid {
+        grid-template-columns: 1fr;
+    }
+}
